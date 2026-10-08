@@ -1,0 +1,249 @@
+{
+  "version": "1.0.0",
+  "producer": "Java AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2026-10-08T12:45:51.9199858Z",
+    "analysisEndTime": "2026-10-08T12:46:43.3728811Z",
+    "status": "completed",
+    "privacyMode": "Protected",
+    "privacyModeHelpUrl": "https://aka.ms/appmod-privacy-mode",
+    "targetIds": [
+      "azure-container-apps",
+      "azure-aks",
+      "azure-appservice"
+    ],
+    "targetDisplayNames": [
+      "Azure Container Apps",
+      "Azure Kubernetes Service",
+      "Azure App Service"
+    ],
+    "capabilities": [
+      "openjdk25"
+    ],
+    "os": [
+      "windows",
+      "linux"
+    ],
+    "id": "20261008124219",
+    "name": "Report_20261008124219",
+    "domains": [
+      "java-upgrade",
+      "security"
+    ],
+    "mode": "issue-only",
+    "minimumCveSeverity": "high",
+    "cveScanScope": "direct"
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 0,
+    "totalIncidents": 0,
+    "totalEffort": 0,
+    "charts": {
+      "severity": {
+        "mandatory": 0,
+        "optional": 0,
+        "potential": 0,
+        "information": 0
+      },
+      "category": {}
+    }
+  },
+  "projects": [
+    {
+      "path": ".",
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "order-service",
+        "jdkVersion": "8",
+        "frameworks": [
+          "Spring Boot",
+          "Spring",
+          "React"
+        ],
+        "languages": [
+          "Java",
+          "JavaScript"
+        ],
+        "tools": [
+          "Maven",
+          "NodeJs"
+        ]
+      },
+      "incidents": []
+    }
+  ],
+  "rules": {},
+  "security": [
+    {
+      "id": "cve-known-vulnerabilities::260ffcd31646",
+      "title": "Password exposure in H2 Database ",
+      "category": "cve-known-vulnerabilities",
+      "severity": "mandatory",
+      "description": "https://github.com/advisories/GHSA-22wj-vf5f-wrvj; severity=high; com.h2database:h2:2.1.214; advisory ranges and first patches: >= 1.4.198, < 2.2.220 => 2.2.220; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-22wj-vf5f-wrvj; severity=high; com.h2database:h2:2.1.214; advisory ranges and first patches: >= 1.4.198, < 2.2.220 => 2.2.220; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::9d3957291a8d",
+      "title": "Apache Log4j Core: Silent log event loss in XmlLayout due to unescaped XML 1.0 forbidden characters",
+      "category": "cve-known-vulnerabilities",
+      "severity": "potential",
+      "description": "https://github.com/advisories/GHSA-3pxv-7cmr-fjr4; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-alpha1, < 2.25.4 => 2.25.4 | >= 3.0.0-alpha1, <= 3.0.0-beta3 => ; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-3pxv-7cmr-fjr4; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-alpha1, < 2.25.4 => 2.25.4 | >= 3.0.0-alpha1, <= 3.0.0-beta3 => ; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::35ad0a23d3cc",
+      "title": "Arbitrary code execution in Apache Commons Text",
+      "category": "cve-known-vulnerabilities",
+      "severity": "mandatory",
+      "description": "https://github.com/advisories/GHSA-599f-7c49-w659; severity=critical; org.apache.commons:commons-text:1.9; advisory ranges and first patches: >= 1.5, < 1.10.0 => 1.10.0; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-599f-7c49-w659; severity=critical; org.apache.commons:commons-text:1.9; advisory ranges and first patches: >= 1.5, < 1.10.0 => 1.10.0; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::80d4a78e03b5",
+      "title": "Apache Log4j Core: `verifyHostName` attribute silently ignored in TLS configuration",
+      "category": "cve-known-vulnerabilities",
+      "severity": "potential",
+      "description": "https://github.com/advisories/GHSA-6hg6-v5c8-fphq; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.12.0, < 2.25.4 => 2.25.4 | >= 3.0.0-alpha1, <= 3.0.0-beta3 => ; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-6hg6-v5c8-fphq; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.12.0, < 2.25.4 => 2.25.4 | >= 3.0.0-alpha1, <= 3.0.0-beta3 => ; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::837012de1cb7",
+      "title": "Incomplete fix for Apache Log4j vulnerability",
+      "category": "cve-known-vulnerabilities",
+      "severity": "mandatory",
+      "description": "https://github.com/advisories/GHSA-7rjr-3q55-vv33; severity=critical; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.13.0, < 2.16.0 => 2.16.0 | >= 2.4.0, < 2.12.2 => 2.12.2 | < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-7rjr-3q55-vv33; severity=critical; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.13.0, < 2.16.0 => 2.16.0 | >= 2.4.0, < 2.12.2 => 2.12.2 | < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::16b13cb75895",
+      "title": "Improper Input Validation and Injection in Apache Log4j2",
+      "category": "cve-known-vulnerabilities",
+      "severity": "potential",
+      "description": "https://github.com/advisories/GHSA-8489-44mv-ggj8; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-beta7, < 2.3.2 => 2.3.2 | >= 2.4, < 2.12.4 => 2.12.4 | >= 2.13.0, < 2.17.1 => 2.17.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-8489-44mv-ggj8; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-beta7, < 2.3.2 => 2.3.2 | >= 2.4, < 2.12.4 => 2.12.4 | >= 2.13.0, < 2.17.1 => 2.17.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::354668e8b998",
+      "title": "Remote code injection in Log4j",
+      "category": "cve-known-vulnerabilities",
+      "severity": "mandatory",
+      "description": "https://github.com/advisories/GHSA-jfh8-c2jp-5v3q; severity=critical; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.13.0, < 2.15.0 => 2.15.0 | >= 2.4, < 2.12.2 => 2.12.2 | >= 2.0-beta9, < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-jfh8-c2jp-5v3q; severity=critical; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.13.0, < 2.15.0 => 2.15.0 | >= 2.4, < 2.12.2 => 2.12.2 | >= 2.0-beta9, < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::526e8aee9421",
+      "title": "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion",
+      "category": "cve-known-vulnerabilities",
+      "severity": "mandatory",
+      "description": "https://github.com/advisories/GHSA-p6xc-xr62-6r2g; severity=high; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.4.0, < 2.12.3 => 2.12.3 | >= 2.13.0, < 2.17.0 => 2.17.0 | < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-p6xc-xr62-6r2g; severity=high; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.4.0, < 2.12.3 => 2.12.3 | >= 2.13.0, < 2.17.0 => 2.17.0 | < 2.3.1 => 2.3.1; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cve-known-vulnerabilities::c5b5cfd54ca3",
+      "title": "Apache Log4j does not verify the TLS hostname in its Socket Appender",
+      "category": "cve-known-vulnerabilities",
+      "severity": "potential",
+      "description": "https://github.com/advisories/GHSA-vc5p-v9hr-52mj; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-beta9, < 2.25.3 => 2.25.3; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only.",
+      "evidence": {
+        "files": [
+          "pom.xml"
+        ],
+        "explanation": "https://github.com/advisories/GHSA-vc5p-v9hr-52mj; severity=medium; org.apache.logging.log4j:log4j-core:2.14.1; advisory ranges and first patches: >= 2.0-beta9, < 2.25.3 => 2.25.3; dependency presence verified, application exploitability not proven. Scope: direct Maven dependencies only."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cwe-code-quality::2e99dbca2862",
+      "title": "Use of Obsolete Function",
+      "category": "cwe-code-quality",
+      "severity": "potential",
+      "description": "WebConfig imports deprecated WebMvcConfigurerAdapter at line 5 and extends it at line 13. This obsolete Spring MVC API is a concrete framework upgrade blocker, not evidence of a remotely exploitable vulnerability.",
+      "evidence": {
+        "files": [
+          "src/main/java/com/contoso/demo/orderservice/config/WebConfig.java"
+        ],
+        "explanation": "WebConfig imports deprecated WebMvcConfigurerAdapter at line 5 and extends it at line 13. This obsolete Spring MVC API is a concrete framework upgrade blocker, not evidence of a remotely exploitable vulnerability."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cwe-credentials-secrets::3f619ff07382",
+      "title": "Insufficient Logging",
+      "category": "cwe-credentials-secrets",
+      "severity": "optional",
+      "description": "OrderService.create (lines 35-38) and updateStatus (lines 40-49) persist order creation and status mutations without recording an application audit event, actor, order identifier or old/new status. The SQL logging setting at application.properties line 7 is not an attributable business/security audit trail. Impact concerns investigation of unauthorized order mutations if the demo is deployed.",
+      "evidence": {
+        "files": [
+          "src/main/java/com/contoso/demo/orderservice/service/OrderService.java",
+          "src/main/resources/application.properties"
+        ],
+        "explanation": "OrderService.create (lines 35-38) and updateStatus (lines 40-49) persist order creation and status mutations without recording an application audit event, actor, order identifier or old/new status. The SQL logging setting at application.properties line 7 is not an attributable business/security audit trail. Impact concerns investigation of unauthorized order mutations if the demo is deployed."
+      },
+      "storyPoint": 0
+    },
+    {
+      "id": "cwe-credentials-secrets::bcb937912b3d",
+      "title": "Use of Hard-coded Credentials",
+      "category": "cwe-credentials-secrets",
+      "severity": "potential",
+      "description": "application.properties lines 1-4 explicitly configure the in-memory H2 database with the fixed sa account and an empty password. The H2 console is enabled at line 8. This is a local demo credential configuration, not a leaked production secret; server.address=127.0.0.1 and web-allow-others=false at lines 9-10 constrain exposure.",
+      "evidence": {
+        "files": [
+          "src/main/resources/application.properties"
+        ],
+        "explanation": "application.properties lines 1-4 explicitly configure the in-memory H2 database with the fixed sa account and an empty password. The H2 console is enabled at line 8. This is a local demo credential configuration, not a leaked production secret; server.address=127.0.0.1 and web-allow-others=false at lines 9-10 constrain exposure."
+      },
+      "storyPoint": 0
+    }
+  ]
+}

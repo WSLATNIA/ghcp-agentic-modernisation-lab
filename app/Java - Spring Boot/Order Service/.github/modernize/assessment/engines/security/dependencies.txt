@@ -1,0 +1,9 @@
+
+The following files have been resolved:
+   org.springframework.boot:spring-boot-starter-web:jar:2.7.18:compile -- module spring.boot.starter.web [auto]
+   org.springframework.boot:spring-boot-starter-data-jpa:jar:2.7.18:compile -- module spring.boot.starter.data.jpa [auto]
+   org.springframework.boot:spring-boot-starter-validation:jar:2.7.18:compile -- module spring.boot.starter.validation [auto]
+   com.h2database:h2:jar:2.1.214:runtime -- module com.h2database [auto]
+   org.apache.logging.log4j:log4j-core:jar:2.14.1:compile -- module org.apache.logging.log4j.core [auto]
+   org.apache.commons:commons-text:jar:1.9:compile -- module org.apache.commons.text [auto]
+   org.springframework.boot:spring-boot-starter-test:jar:2.7.18:test -- module spring.boot.starter.test [auto]

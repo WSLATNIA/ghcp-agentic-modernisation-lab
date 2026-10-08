@@ -1,0 +1,9 @@
+version: 1
+skills:
+  - "cve-known-vulnerabilities"
+  - "cwe-code-quality"
+  - "cwe-concurrency-synchronization"
+  - "cwe-credentials-secrets"
+  - "cwe-file-path-security"
+  - "cwe-injection-attacks"
+  - "cwe-memory-safety"

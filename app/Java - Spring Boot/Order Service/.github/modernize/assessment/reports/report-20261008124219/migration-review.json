@@ -1,0 +1,78 @@
+{
+    "schemaVersion":  1,
+    "runId":  "20261008124219",
+    "application":  "Order Service",
+    "assessmentOnly":  true,
+    "currentState":  {
+                         "observedRuntime":  "Microsoft OpenJDK 17.0.18",
+                         "database":  "H2 2.1.214",
+                         "framework":  "Spring Boot 2.7.18",
+                         "javaSourceTarget":  8
+                     },
+    "recommendedTarget":  {
+                              "springBootDocumentationObservedVersion":  "3.5.16",
+                              "qualification":  "Official system requirements observed during assessment state Java 17 minimum and compatibility through Java 25. Select and rescan the supported current patch at implementation time; this is not a guarantee of indefinite support.",
+                              "java":  25,
+                              "compatibilityReference":  "https://docs.spring.io/spring-boot/3.5/system-requirements.html",
+                              "springBootLine":  "3.5.x"
+                          },
+    "migrationRequirements":  [
+                                  {
+                                      "recommendation":  "Install/select JDK 25 for Maven and runtime. Use a consistent release 25 compiler configuration and remove conflicting Java 8 overrides. Confirm plugin and test tooling compatibility on JDK 25.",
+                                      "observation":  "Java version and compiler source/target are fixed to 8 in both properties and plugin configuration.",
+                                      "evidence":  [
+                                                       "pom.xml:20-22",
+                                                       "pom.xml:85-86"
+                                                   ],
+                                      "id":  "build-java25"
+                                  },
+                                  {
+                                      "recommendation":  "Move the affected imports to jakarta.persistence and jakarta.validation with the Spring Boot 3 framework/BOM migration. Do not indiscriminately replace unrelated javax JDK namespaces.",
+                                      "observation":  "JPA and Bean Validation imports use javax.persistence and javax.validation.",
+                                      "evidence":  [
+                                                       "src/main/java/com/contoso/demo/orderservice/model/Order.java:3-14",
+                                                       "src/main/java/com/contoso/demo/orderservice/web/OrderController.java:17"
+                                                   ],
+                                      "id":  "jakarta-migration"
+                                  },
+                                  {
+                                      "recommendation":  "Implement WebMvcConfigurer and preserve the API route/method behavior. Review wildcard CORS separately before production exposure.",
+                                      "observation":  "Configuration extends deprecated WebMvcConfigurerAdapter.",
+                                      "evidence":  [
+                                                       "src/main/java/com/contoso/demo/orderservice/config/WebConfig.java:5-19"
+                                                   ],
+                                      "id":  "spring-mvc-api"
+                                  },
+                                  {
+                                      "recommendation":  "Upgrade through a controlled Java 17/Spring Boot 3 transition, then validate on Java 25. Preserve POST validation, status reset to PENDING, PATCH enum validation, 404 responses, BigDecimal totals and date serialization against existing tests.",
+                                      "observation":  "The upgrade changes Spring Framework, Hibernate/JPA, validation and test dependencies.",
+                                      "evidence":  [
+                                                       "pom.xml:7-12",
+                                                       "src/main/java/com/contoso/demo/orderservice/model/Order.java",
+                                                       "src/main/java/com/contoso/demo/orderservice/repository/OrderRepository.java",
+                                                       "src/test/java"
+                                                   ],
+                                      "id":  "framework-behavior"
+                                  },
+                                  {
+                                      "recommendation":  "Remove unused explicit Log4j Core and Commons Text dependencies after confirming no use, or upgrade to supported patched releases. The direct-scope advisory set requires Log4j Core at least 2.25.4, Commons Text at least 1.10.0 and H2 at least 2.2.220; these are advisory minima, not recommended final patch pins. Prefer compatible Boot BOM management and repeat a full transitive advisory scan.",
+                                      "observation":  "Direct Maven advisory queries identified vulnerable Log4j Core, Commons Text and H2 versions.",
+                                      "evidence":  [
+                                                       "pom.xml:44-59",
+                                                       ".github/modernize/assessment/engines/security/github-advisories.json"
+                                                   ],
+                                      "id":  "dependency-remediation"
+                                  }
+                              ],
+    "limitations":  [
+                        "AppCAT openjdk25 source rules reported no incidents. This does not establish whole-framework or dependency compatibility, and AppCAT reported no dependency output.",
+                        "Dependency advisory assessment covers only the seven direct Maven dependencies. Transitive dependencies and frontend npm packages were not included in the CVE scan.",
+                        "No JDK 25 build, migration or vulnerability exploitation was executed. Dependency presence is not proof that the vulnerable functionality is reachable. The current source uses no Commons Text interpolation and no direct Log4j Core API; default Spring Boot web logging uses Logback.",
+                        "H2 CVE-2022-45868 concerns a CLI admin password argument not used by this application; its affected dependency is nevertheless present.",
+                        "H2 console and fixed blank-password sa configuration are local demo settings. The backend binds to 127.0.0.1; no production exposure was established.",
+                        "The plugin CWE catalog is bounded and is not a complete authentication, authorization or penetration audit."
+                    ],
+    "implementationChanges":  [
+
+                              ]
+}
